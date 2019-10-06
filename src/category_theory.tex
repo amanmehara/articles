@@ -2,6 +2,10 @@
 
 \begin{document}
 
+\title{Category Theory}
+\author{Aman Mehara}
+\maketitle
+
 \section{Category}
 A category is a collection of \textbf{objects} that are linked by \textbf{arrows}.
 
@@ -12,9 +16,52 @@ A category is a collection of \textbf{objects} that are linked by \textbf{arrows
 \section{Functor}
 A \textbf{functor} is a map between categories.
 
+\subsection{Definition}
+Let C and D be categories. A \textbf{functor} F from C to D is a mapping that:
+
+\begin{itemize}
+
+\item 
+  associates to each object \(X\) in C an object \(F(X)\) in D,
+
+\item
+  associates to each morphism \(f\colon X \to Y\) in C a morphism 
+  \(F(f)\colon F(X) \to F(Y)\) in D such that the following two conditions hold:
+
+  \begin{itemize} 
+
+  \item 
+    \(F(id_{x}) = id_{F(x)}\) for every object \(X\) in C.
+    
+  \item
+    \(F(g \circ f) = F(g) \circ F(x)\) for all morphisms \(f\colon X \to Y\) and 
+    \(g\colon Y \to Z\) in C.
+
+  \end{itemize}
+
+\end{itemize}
+
 \section{Natural Transformations}
 A \textbf{natural transformation} provides a way of transforming one functor 
 into another while respecting the internal structure of the categories involved.
+
+\subsection{Definition}
+If F and G are functors between categories C and D, the a \textbf{natural 
+transformation} \(\eta\) from F to G is a family of morpisms that satisfies two 
+requirements.
+
+\begin{itemize}
+
+\item
+  The natural transformation must associate to every object \(X\) in C a 
+  morphism \(\eta_{X}\colon F(X) \to G(X)\) between objects of D. The morphism 
+  \(\eta_{X}\) is called the component of \(\eta\) at \(X\).
+
+\item
+  Components must be such that for every morphism \(f\colon X \to Y\) in C we 
+  have: \(\eta_{Y} \circ F(f) = G(f) \circ \eta_{X}\).
+
+\end{itemize}
 
 \section{Monad}
 
